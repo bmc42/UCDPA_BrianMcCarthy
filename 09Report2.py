@@ -4,7 +4,7 @@ File:		Create report on All Stock Exchange data downsized using the average valu
 Author:		Brian McCarthy (brian.mccarthy@hpo.ie)
 Create:		2023-03-27
 Descr		The purpose of this script is to report on all nine stock exchange data sets
-            to allow easy comparison. The Avergage stock exchange values in for data sets
+            to allow easy comparison. The Average stock exchange values for the data sets
             are also plotted
 
 """ 
@@ -59,7 +59,7 @@ for (index, columnName) in enumerate (DFForPlotting):
         row = 2
         col = index -6
 
-    # determine the average column, use NYSE for new york sotcks and LSE for london stocks
+    # determine the average column, use NYSE for new york stocks and LSE for london stocks
     avgColumn = ''
     if ( columnName in NYSE ): avgColumn = 'NYSE'
     if ( columnName in LSE ):  avgColumn = 'LSE'
@@ -90,4 +90,5 @@ fig.suptitle ("Graph of all weekly stock values - Percentage Change ( based on A
 fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
 # Show the figure
+fig.savefig('../image/report2.png', facecolor='white')
 plt.show()
